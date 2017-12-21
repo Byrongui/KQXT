@@ -109,7 +109,7 @@ namespace Bozoneit.CQXI
         }
         #endregion
 
-        #region 处理过程
+        #region 处理过程  修改
         private void pross()
         {
             //判断临时目录是否存在
