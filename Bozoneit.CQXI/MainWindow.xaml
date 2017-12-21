@@ -1,0 +1,51 @@
+﻿<Window x:Class="Bozoneit.CQXI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bozoneit.CQXI"
+        mc:Ignorable="d"
+        Title="博众考勤文件处理（简易版V1.0）" Height="350" Width="525" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <BitmapImage x:Key="background"></BitmapImage>
+    </Window.Resources>
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="background.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="285*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Border Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="101*"/>
+                        <ColumnDefinition Width="303*"/>
+                        <ColumnDefinition Width="103*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="42*"/>
+                        <RowDefinition Height="44*"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="139*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock  Text="*请选择文件：" Foreground="Red"/>
+                    <TextBox IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Stretch" x:Name="TB_selectFilePath"/>
+                    <Button Grid.Column="2" Content="..." x:Name="Btn_selectFile" Click="Btn_selectFile_Click" Background="Red"/>
+                    <TextBlock  Text="请选择生成(可选)：" Margin="12,18,11,10" Grid.Row="1"/>
+                    <TextBox IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Stretch" x:Name="TB_selectPath" Margin="0,16,0,10" Grid.Row="1"/>
+                    <Button Grid.Column="2" Content="..." x:Name="Btn_selectPath"  Grid.Row="1" Click="Btn_selectPath_Click"/>
+                    <Button Grid.Column="1" Grid.Row="2" Content="开始处理" x:Name="Btn_Start" Click="Btn_Start_Click" Height="39" Margin="104,6,97,5" Width="102" Background="#FF3EFF05"/>
+
+                    <Grid Grid.Row="3" Grid.ColumnSpan="3">
+                        <Border>
+                            <RichTextBox x:Name="RTB_log" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Background="#CCFFFFFF" Foreground="Red"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
